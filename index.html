@@ -1,0 +1,28 @@
+<form id="form" name="form">
+	<select id="select">
+		<option value="0" selected="selected">не выбрано</option>
+		<option value="1">A</option>
+		<option value="2">B</option>
+		<option value="3">C</option>
+		<option value="4">D</option>
+	</select>
+
+	<input type="hidden" name="input" id="input" value="" />
+	<button type="submit">Отправить</button>
+</form>
+
+<script type="text/javascript">
+
+	var select = document.getElementById('select');
+	var input = document.getElementById('input');
+
+	select.onchange = function() {
+		input.value = this.value;
+	};
+
+	document.form.onsubmit = function(event) {
+		console.log(input.value);
+		return false;
+	}
+
+</script>
